@@ -123,3 +123,27 @@
 // };
 // console.log(person);
 // ---------------------------------------------------------
+//null type:
+// type Married = null | boolean;
+// const isMarried:Married = null;
+// console.log(isMarried);
+// ---------------------------------------------------------
+//unknown type: manage unknown type using condition:
+// const calculate = (value: unknown ) =>{
+//   if(typeof value === 'number'){
+//     return (`value type is number: ${value + value}`)
+//   }
+//   if(typeof value === 'string'){
+//     return (`value type is string: ${value}`)
+//   }
+// }
+// const result1 = calculate(30);
+// const result2 = calculate('dulon mahadi molla');
+// console.log(result1);
+// console.log(result2);
+// ---------------------------------------------------------
+//never type: never return anything:
+// const throwError = (msg: string):never => {
+//   throw new Error(msg);
+// };
+// throwError('this function is return anything')

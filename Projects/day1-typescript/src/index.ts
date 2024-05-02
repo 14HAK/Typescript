@@ -1,29 +1,24 @@
-
 // ---------------------------------------------------------
 // primitive data types
 // String:
 // const firstName: String = 'dulon';
 // console.log(firstName);
 
-
 // ---------------------------------------------------------
 // number:
 // const age:Number = 30;
 // console.log(age);
-
 
 // ---------------------------------------------------------
 //boolean:
 // const isMarried: Boolean | number = 30;
 // console.log(isMarried);
 
-
 // ---------------------------------------------------------
 //null:
 // let manage: null = null;
 // console.log(manage);
 // manage = 'dulon'
-
 
 // ---------------------------------------------------------
 //undefined:
@@ -36,7 +31,6 @@
 // const arr: string[] = ['mna', '30', 'lena'];
 // console.log(arr);
 
-
 // ---------------------------------------------------------
 //tuple:
 // const arr2:[string, number] = ['dulon', 30] ;
@@ -48,7 +42,6 @@
 //literals types:
 // const names: 'dulon' | 'molla' = 'molla';
 // const age: '30' | '50' = '20';
-
 
 // ---------------------------------------------------------
 //object:
@@ -74,7 +67,6 @@
 // console.log(person.id);
 // console.log(person.isMarried);
 
-
 // ---------------------------------------------------------
 //function:
 // function ageCalculate(num1: number, num2: number): number {
@@ -85,7 +77,6 @@
 // const arr: string[] = ['jadu', 'madu', 'padu'];
 // const news = arr.map((elem: string): string=> elem)
 // console.log(news);
-
 
 // ---------------------------------------------------------
 //spreed operator:
@@ -98,12 +89,10 @@
 // const allPerson:Person = [...person1, ...person2];
 // console.log(allPerson);
 
-
 // ---------------------------------------------------------
 //rest operator:
 // const [first, second, ...rest ]:string[] = allPerson;
 // console.log(rest, first, second);
-
 
 // ---------------------------------------------------------
 //union type: only common all property:
@@ -157,81 +146,33 @@
 
 // console.log(person);
 
+// ---------------------------------------------------------
+//null type:
+// type Married = null | boolean;
+
+// const isMarried:Married = null;
+// console.log(isMarried);
 
 // ---------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//unknown type: manage unknown type using condition:
+// const calculate = (value: unknown ) =>{
+//   if(typeof value === 'number'){
+//     return (`value type is number: ${value + value}`)
+//   }
+
+//   if(typeof value === 'string'){
+//     return (`value type is string: ${value}`)
+//   }
+// }
+// const result1 = calculate(30);
+// const result2 = calculate('dulon mahadi molla');
+// console.log(result1);
+// console.log(result2);
+
+// ---------------------------------------------------------
+//never type: never return anything:
+// const throwError = (msg: string):never => {
+//   throw new Error(msg);
+// };
+
+// throwError('this function is return anything')
