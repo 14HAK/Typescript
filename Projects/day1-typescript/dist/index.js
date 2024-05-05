@@ -256,3 +256,39 @@
 // ---------------------------------------------------------
 //constrains in generic: extends with property:
 //extends কীওয়ার্ড দ্বারা Generics এ ব্যবহৃত টাইপ ভ্যারিয়েবলে কিছু বাধ্যবাধকতা বা শর্তারোপ করা যায়।
+// const addStudent = <T extends { id: number; userName: string }>(student: T) => {
+//   return { ...student };
+// };
+// const result1 = <{ age: number; isMarried: boolean }>(
+//   addStudent({ id: 1254, userName: 'dulon', age: 30, isMarried: true })
+// );
+// console.log(result1);
+// ---------------------------------------------------------
+// constrains in generic with keyof and extends combination:
+// const user:{userName: string, age: number, isMarried: boolean} = {
+//   userName: 'dulon',
+//   age: 27,
+//   isMarried: false,
+// }
+// const getProperty = <T, Q extends keyof T>(obj:T, key:Q)=>{
+//   return obj[key]
+// }
+// const result1 = getProperty(user,'userName');
+// console.log(result1);
+// ---------------------------------------------------------
+// conditional type checking:
+// type a1 = string;
+// type b1 = undefined;
+// type x = a1 extends null ? true : false;
+// type y = a1 extends string ? true : b1 extends undefined ? undefined : any;
+// ---------------------------------------------------------
+// conditional type checking:
+// type Sheikh = {
+//   bike: string;
+//   car: string;
+//   ship: string;
+// }
+// type CheckVehicle<T> = T extends keyof Sheikh ? Sheikh : false;
+// type HasShip = CheckVehicle<'ship'>
+// ---------------------------------------------------------
+// mapped type:
