@@ -176,3 +176,143 @@
 // };
 
 // throwError('this function is return anything')
+
+// ---------------------------------------------------------
+// type assertion:
+// Type Assertion: যখন কোনো ভ্যারিয়েবলের টাইপ সম্পর্কে TypeScript এর কাছে পর্যাপ্ত তথ্য থাকে না এবং ডেভেলপার TypeScript কে forcefully ভ্যারিয়েবলের কোনো একটা নির্দিষ্ট টাইপ ধরে নিতে বলে তখন তাকে Type Assertion বলে। amra jokhon kono kichor type nije theke declear kore dei setai type assertion.
+
+// function demo(value: any): any{
+//   if(typeof value === 'string'){
+//     console.log('assertion value is a string');
+//     return 'assertion value is a string'
+//   }
+
+//   if(typeof value === 'number'){
+//     console.log('assertion value is a number');
+//     return 'assertion value is a number'
+//   }
+// }
+
+// const res1 = demo(50000)  as number
+// const res2 = demo('dulon')  as string
+
+// ---------------------------------------------------------
+//type and interface:
+
+// Interface: Interface হলো Type Alias এর মতোই টাইপ ডিফাইন করার একটি পদ্ধতি যেটার মাধ্যমে শুধুমাত্র non primitive or reference Type এর স্ট্রাকচার ডিফাইন করা হয়।:
+// interface User1 {
+//   name: string;
+//   age : 50;
+// }
+
+// ---------------------------------------------------------
+// Type Alias: Type Alias দ্বারা primitive এবং non primitive উভয় ধরণের টাইপ ডিফাইন করা যায়।:
+// type Name = string;
+
+// type User2 = {
+//   name : string;
+//   age : 50;
+// }
+
+// ---------------------------------------------------------
+// Interface কে এক্সটেন্ড করতে হয় extends keyword দ্বারা। অপরদিকে Type Alias কে এক্সটেন্ড করতে হয় ‘&’ অপারেটর দ্বারা।:
+// interface User {
+//   name: string;
+//   age: number;
+// }
+
+// interface Person extends User {roll: string};
+
+// const person: Person = {
+//   name: 'dulon',
+//   age: 27,
+//   roll: 'player'
+// }
+
+// console.log(person);
+
+//interface array:
+// interface Rule {
+//   [index: number] : number
+// }
+
+// const arrayRule: Rule = [1,2,3]
+
+// ---------------------------------------------------------
+// interface function:
+// interface Add{
+//   (val1: number, val2: number) : number
+// }
+
+// const addFunc:Add = (val1, val2) => {
+//   return val1 + val2
+// }
+
+// const result = addFunc(20,10)
+// console.log(result);
+
+// ---------------------------------------------------------
+// Generic type:
+// Generics: কোনো function, type alias, interface, class ইত্যাদিতে টাইপ ডিফাইন করার সময় কোনো টাইপকে explicitly ডিফাইন না করে টাইপকে ভ্যারিয়েবল আকারে রিসিভ করে function, type alias, interface, class ইত্যাদি ডিফাইন করাকে Generics বলে।
+
+// generic er madhome amra amader proyojon onujai typediye dite pari.
+
+// type Person<T> = Array<T>;
+
+// const arrNumber: Person<number> = [30, 40, 50];
+// const arrString: Person<string> = ['dulon', 'mahadi'];
+
+// // generic moloto dynamic way te param akare type niye thake.
+// const arrMixed: Person<string | number> = [30, 'dulon', 30];
+// const arrSpecific: Person<'manage' | 70> = ['manage'];
+
+// //generic object:
+// const arrObject: Person<{ userName: string; age: number }> = [
+//   { userName: 'dulon', age: 20 },
+//   { userName: 'dulon', age: 20 },
+// ];
+
+// ---------------------------------------------------------
+//generic with interface:
+// interface Developer<T> {
+//   manageName: string;
+//   haven: T;
+// }
+
+// const developer1:Developer<boolean> = {
+//   manageName: 'control',
+//   haven: true,
+// }
+
+// const developer2:Developer<{till: string, isLoad: boolean}> = {
+//   manageName: 'supply',
+//   haven:{till:'multer', isLoad: true}
+// }
+
+// ---------------------------------------------------------
+//generic function:
+// const createGeneric = <T>(param:T): T[] => {
+//   return [param]
+// }
+// const res1 = createGeneric<boolean>(true)
+// const res2 = createGeneric<string>('dulon mahadi')
+// const res3 = createGeneric<{name: string, age: number}>({name: 'molla', age:27})
+
+// console.log(res1);
+// console.log(res2);
+// console.log(res3);
+
+// ---------------------------------------------------------
+//generic tuple:
+// const createTuple = <T,Q>(val1:T,val2:Q)=>{
+//   return [val1, val2]
+// }
+
+// const res4 = createTuple<number, number>(30,50);
+// const res5 = createTuple<{name: string}, {base: boolean}>({name: 'dulon'}, {base: true})
+// console.log(res4);
+// console.log(res5);
+
+// ---------------------------------------------------------
+//constrains in generic: extends with property:
+//extends কীওয়ার্ড দ্বারা Generics এ ব্যবহৃত টাইপ ভ্যারিয়েবলে কিছু বাধ্যবাধকতা বা শর্তারোপ করা যায়।
