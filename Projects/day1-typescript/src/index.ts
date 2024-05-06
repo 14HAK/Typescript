@@ -367,8 +367,22 @@
 
 // ---------------------------------------------------------
 // mapped type:
+// mapped type change all the type safely:
+// type Person = {
+//   name: string;
+//   age: number;
+//   isOpen: boolean;
+// }
 
+// type PersonString = {
+//   [key in keyof Person]: boolean;
+// }
 
+// const person: PersonString = {
+//   name: true,
+//   age: true,
+//   isOpen: false,
+// }
 
 
 
