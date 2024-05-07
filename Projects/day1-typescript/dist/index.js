@@ -380,3 +380,61 @@
 // // console.log(teacher1);
 // ---------------------------------------------------------
 //type guard or type narrowing:
+// if("role" === "string") {}
+// if("role" in userObject){}
+// if(animal instanceof CatType)
+// ekhane type guard er madhhome jokhon je class object asbe tader conditional type narretion or guard er madhome sei slote pathano hobe.
+// const isDog = (animal: Animal): animal is Dog => {
+//   return animal instanceof Dog;
+// };
+// const isCat = (animal: Animal): animal is Cat => {
+//   return animal instanceof Cat;
+// };
+// const getAnimal = (animal: Animal) => {
+//   if (isDog(animal)) {
+//     animal.makeBark();
+//   } else if (isCat(animal)) {
+//     animal.makeMeaw();
+//   } else {
+//     animal.makeSound()
+//   }
+// };
+// ---------------------------------------------------------
+// typescript access modefier
+// private _balance: যখন private use kora hobe tokhon seta private property hisebe theke jabe. jemon kono class er modhe use kora hole seta class er modhei access othoba modify kora jabe kinto bahire chaild extend parent othoba bairer doniyate access to change ba modify kora jabe na.
+// protected _balance: যখন protected use kora hobe tokhon seta protected property hisebe theke jabe. jemon kono class er modhe use kora hole seta class er modhei access othoba modify kora jabe kinto bahire chaild extend parent access pawa jabe kinto bairer doniyate access to change ba modify kora jabe na.
+// public:
+// readonly:
+// class BankAccount {
+//   public readonly id: number;
+//   public userName: string;
+//   private _balance: number;
+//   protected many : string;
+//   constructor(id: number, userName: string, _balance: number, many: string){
+//     this.id = id;
+//     this.userName = userName;
+//     this._balance = _balance;
+//     this.many = many;
+//   }
+//   changeBalance(amount: number){
+//     return this._balance = amount;
+//   }
+//   static changeAnywhere (count: number): number{
+//     return count = count + count
+//   }
+// }
+// const person1 = new BankAccount(12254, 'dulon mahadi', 2500, 'many-more' )
+// // person1._balance = 3000; //.ts _balance corasori change korte dibe na karon eta private.
+// // person1.changeBalance(5000) //.ts evabe _balance method er madhhome change kora jabe karon private method class er modhe access oo modify er permission ache.
+// // console.log(person1);
+// class Child extends BankAccount{
+//  childParam: string;
+//  constructor(id: number, userName: string, _balance:number,many: string, childParam: string){
+//   super(id, userName,_balance, many)
+//   this.childParam = childParam
+//  }
+// }
+// const joker = new Child(12555,'molla', 2600, 'childClass', 'manyrrrrrr-moreeee')
+// // console.log(joker);
+// ---------------------------------------------------------
+// static:
