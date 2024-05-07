@@ -326,7 +326,6 @@
 
 // console.log(result1);
 
-
 // ---------------------------------------------------------
 // constrains in generic with keyof and extends combination:
 // const user:{userName: string, age: number, isMarried: boolean} = {
@@ -341,7 +340,6 @@
 
 // const result1 = getProperty(user,'userName');
 // console.log(result1);
-
 
 // ---------------------------------------------------------
 // conditional type checking:
@@ -363,8 +361,6 @@
 
 // type HasShip = CheckVehicle<'ship'>
 
-
-
 // ---------------------------------------------------------
 // mapped type:
 // mapped type change all the type safely:
@@ -384,52 +380,121 @@
 //   isOpen: false,
 // }
 
+// ---------------------------------------------------------
+// class in typescript:
+// class Person {
+//   name: string;
+//   age: number;
+//   isMarried: boolean;
+//   constructor(name: string, age: number, isMarried: boolean) {
+//     this.name = name;
+//     this.age = age;
+//     this.isMarried = isMarried;
+//   }
+
+//   isAllRight() {
+//     return `${this.name}, he is ${
+//       !this.isMarried ? 'single, not happy' : 'dou brother and happy!'
+//     }. Married: ${this.isMarried}`;
+//   }
+// }
+
+// const student1 = new Person('dulon', 27, false);
+// console.log(student1);
+// console.log(student1.isAllRight());
+
+// ---------------------------------------------------------
+// class in typescript:
+// class Person {
+//   constructor(public name: string, public age: number, public isMarried: boolean){}
+// }
+
+// const student1 = new Person('dulon mahadi', 27, false);
+// console.log(student1);
+
+// ---------------------------------------------------------
+// Inheritance: A class created with a class inheritance inherits all the methods from another class:
+// child কোন class তৈরি করার জন্য প্যারেন্ট কোন class কে extends করার মাধ্যমে child যখন parent এর সব প্রপার্টি বা আংশিক method নিজের করে নেয় একেই class inheritance বলে।
+
+// //parent class:
+// class Person{
+//   userName: string;
+//   age: number;
+//   isMarried: boolean;
+//   passion: string;
+
+//   constructor(userName:string, age: number, isMarried: boolean, passion: string){
+//     this.userName = userName;
+//     this.age = age;
+//     this.isMarried = isMarried;
+//     this.passion = passion;
+//   }
+
+//   definition(){
+//     return (`name: ${this.userName} and age is ${this.age}. he is married: ${this.isMarried}`)
+//   }
+
+// }
+
+// // Teacher class extends Person class:
+// class Teacher extends Person{
+//   speech: string
+
+//   constructor(userName: string, age: number, isMarried: boolean, passion:string,speech: string){
+//     super(userName, age, isMarried, passion)
+//     this.speech = speech;
+//   }
+
+//   teacherSaid(){
+//     return (`i am a ${this.passion}. and me: ${this.speech}.`)
+//   }
+// }
+
+// //Student class extends Person class:
+// class Student extends Person{
+//   passingYear: string;
+
+//   constructor(userName: string, age: number,isMarried: boolean,passion:string, passingYear: string){
+//     super(userName, age, isMarried, passion)
+//     this.passingYear = passingYear;
+//   }
+
+//   studentJoy(){
+//     return (`i am free in: ${this.passingYear}`)
+//   }
+// }
+
+// const student1 = new Student('dulon molla', 27, false, 'student', 'continued...');
+// // console.log(student1);
+
+// const teacher1 = new Teacher('md: mossarof mia', 35, true, 'teacher', 'i am started this job since 2009')
+// // console.log(teacher1);
+
+// ---------------------------------------------------------
+//type guard or type narrowing:
+// if("role" === "string") {}
+// if("role" in userObject){}
+// if(animal instanceof CatType)
+  // ekhane type guard er madhhome jokhon je class object asbe tader conditional type narretion or guard er madhome sei slote pathano hobe.
+
+// const isDog = (animal: Animal): animal is Dog => {
+//   return animal instanceof Dog;
+// };
+
+// const isCat = (animal: Animal): animal is Cat => {
+//   return animal instanceof Cat;
+// };
+
+// const getAnimal = (animal: Animal) => {
+//   if (isDog(animal)) {
+//     animal.makeBark();
+//   } else if (isCat(animal)) {
+//     animal.makeMeaw();
+//   } else {
+//     animal.makeSound()
+//   }
+// };
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ---------------------------------------------------------
