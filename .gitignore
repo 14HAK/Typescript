@@ -3,3 +3,4 @@ problems
 node_modules
 dist
 mist
+.git
