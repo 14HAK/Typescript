@@ -342,6 +342,32 @@
 // console.log(result1);
 
 // ---------------------------------------------------------
+// type ArrayType<T> = T[];
+
+// const stringArray:ArrayType<string> = ['aa','bb','cc','dd','ee'];
+// const numberArray:ArrayType<number> = [1,2,3,4,5];
+
+// const reverseArray = <T>(ary: ArrayType<T>): ArrayType<T> =>{
+//   const reverse = ary?.reverse();
+//   return reverse;
+// }
+
+// //result print:
+// const stringReverse = reverseArray<string>(stringArray);
+// const numberReverse = reverseArray<number>(numberArray)
+// console.log(stringReverse);
+// console.log(numberReverse);
+
+
+// ---------------------------------------------------------
+
+
+
+
+
+
+
+
 // conditional type checking:
 // type a1 = string;
 // type b1 = undefined;
